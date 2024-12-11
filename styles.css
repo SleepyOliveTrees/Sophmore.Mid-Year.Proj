@@ -1,0 +1,30 @@
+body{
+    padding: 0px;
+    margin: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    position: sticky;
+}
+
+.navbar_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+}
+
+.login {
+    text-align: center;
+    font-size: 1.4rem;
+    border-radius: 30px;
+    height: 50px;
+    width: 200px;
+}
+
+.login:hover{
+    background-color: brown;
+}
