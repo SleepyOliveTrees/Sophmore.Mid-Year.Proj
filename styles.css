@@ -1,4 +1,5 @@
 body{
+    background-color: rgb(255, 255, 255);
     padding: 0px;
     margin: 0;
 }
@@ -11,20 +12,26 @@ body{
 }
 
 .navbar_container {
+    padding: 15px;
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: black;
+    justify-content: space-between;
+    background-color: rgb(117, 146, 166);
 }
 
-.login {
+.login_button {
+    line-height: 0px;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    font-size: 1.4rem;
     border-radius: 30px;
-    height: 50px;
+    font-size: 1.2rem;
+    height: 40px;
     width: 200px;
+    background-color: rgb(159, 196, 207);
+    transition: 0.4s all ease;
 }
-
-.login:hover{
+.login_button:hover{
     background-color: brown;
 }
