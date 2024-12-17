@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="index.html" id="navbar_logo"> <img src="https://www.pinclipart.com/picdir/big/109-1098476_checklist-poll-task-to-do-list-clipboard-comments.png" alt="logo" width="40px"></a>
+            <div class = "login_button">
+                <div class = "login_button_text">
+                    <h3>LOGIN</h3> 
+                </div>   
+            </div>
+            
+        </div>
+     </nav>
+    <div class = "tasks-bg">
+        <div class="heading-text">
+            <h1>Weekly Tasks</h1>
+        </div>
+        <div class="row">
+            <input type="text" id="input-box" placeholder="Type your task here">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <div class="weekly-display">
+            <div class="todo-app">
+                <div class="day-of-week">
+                    <h2>SUNDAY</h2>
+                </div>
+                <ul id="list-container">
+                </ul>
+            </div>
+            <div class="todo-app">
+                <div class="day-of-week">
+                    <h2>MONDAY</h2>
+                </div>
+                
+                <!-- <div class="row">
+                    <input type="text" id="input-box" placeholder="Type yor task here">
+                    <button onclick="addTask()">Add</button>
+                </div> -->
+                <ul id="list-container">
+                </ul>
+            </div>
+            <div class="todo-app">
+                <div class="day-of-week">
+                    <h2>TUESDAY</h2>
+                </div>
+                <!-- <div class="row">
+                    <input type="text" id="input-box" placeholder="Type yor task here">
+                    <button onclick="addTask()">Add</button>
+                </div> -->
+                <ul id="list-container">
+                </ul>
+            </div>
+            <div class="todo-app">
+                <div class="day-of-week">
+                    <h2>WEDNESDAY</h2>
+                </div>
+                <!-- <div class="row">
+                    <input type="text" id="input-box" placeholder="Type yor task here">
+                    <button onclick="addTask()">Add</button>
+                </div> -->
+                <ul id="list-container">
+                </ul>
+            </div>
+            <div class="todo-app">
+                <div class="day-of-week">
+                    <h2>THURSDAY</h2>
+                </div>
+                <!-- <div class="row">
+                    <input type="text" id="input-box" placeholder="Type yor task here">
+                    <button onclick="addTask()">Add</button>
+                </div> -->
+                <ul id="list-container">
+                </ul>
+            </div>
+            <div class="todo-app">
+                <div class="day-of-week">
+                    <h2>FRIDAY</h2>
+                </div>
+                <!-- <div class="row">
+                    <input type="text" id="input-box" placeholder="Type yor task here">
+                    <button onclick="addTask()">Add</button>
+                </div> -->
+                <ul id="list-container">
+                </ul>
+            </div>
+            <div class="todo-app">
+                <div class="day-of-week">
+                    <h2>SATURDAY</h2>
+                </div>
+                <!-- <div class="row">
+                    <input type="text" id="input-box" placeholder="Type yor task here">
+                    <button onclick="addTask()">Add</button>
+                </div> -->
+                <ul id="list-container">
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
