@@ -1,0 +1,20 @@
+{
+  "name": "sophmore.mid-year.proj",
+  "version": "1.0.0",
+  "description": "\"Sophmore Mid-Year Project\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Sophmore.Mid-Year.Proj "
+  },
+  "keywords": [
+    "Collaboration",
+    "Project",
+    "Mid-Year"
+  ],
+  "author": "SleepyOliveTrees",
+  "license": "ISC"
+}
