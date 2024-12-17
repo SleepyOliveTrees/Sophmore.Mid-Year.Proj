@@ -16,5 +16,8 @@
     "Mid-Year"
   ],
   "author": "SleepyOliveTrees",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
