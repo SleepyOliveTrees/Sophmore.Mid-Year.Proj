@@ -81,3 +81,144 @@ header{
 }
 
 
+
+/* home page */
+
+/* task/calender page */
+
+/* finance tracker page */
+
+.tasks-bg {
+    margin-top: 90px;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #243010, #87A330 );
+    padding: 50px;
+}
+
+
+.heading-text{
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 0 0 3px #0008ff, 0 0 5px #000000;
+    text-align: center;
+    transition: ease all 0.5s;
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 500px;
+    min-height: 700px;
+    background: #CAD593;
+    margin: 10px 5px 20px;
+    padding: 40px 10px 70px;
+    border-radius: 15px;
+}
+
+.todo-app img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row{
+    margin-top: 50px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    /* flex: 1; */
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #A1C349;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.day-of-week {
+    text-align: center;
+    background-color: #A1C349;
+    padding: 5px;
+    border-radius: 50px;
+    color: #2A3C24;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: ease all 0.3s;
+}
+.day-of-week:hover{
+    background-color: #91af44;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 25px 12px 12px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+ul li ::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    /* this part needs to altered still, or maybe remove */
+    background-image: url('https://static-00.iconduck.com/assets.00/radio-button-unchecked-icon-512x512-ikx9yel3.png  x');
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url('https://static-00.iconduck.com/assets.00/checkbox-icon-256x256-lu3j3asn.png');
+
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50px;
+}
+ul li span:hover {
+    background: #edeef0;
+}
+
+.weekly-display {
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-rows: auto;
+    align-items: center;
+}
