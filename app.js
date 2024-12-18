@@ -13,6 +13,7 @@ loginLink.addEventListener('click', ()=> {
 
 // task list
 const express = require("express");
+const db = require("./db/db_connection");
 const app = express();
 
 const inputBox = document.getElementById("input-box");
