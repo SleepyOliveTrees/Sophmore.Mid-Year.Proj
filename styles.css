@@ -276,11 +276,13 @@ header.about{
 }
 body.about{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     background: url('https://wallpaperaccess.com/full/3046500.jpg');
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
 }
 .about-box{
@@ -324,6 +326,60 @@ body.about{
     text-align: center;
     font-size: 0.9em;
 }
+.sections{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 50px 0;
+    padding: 20px;
+    gap: 20px;
+}
+
+.avneet{
+    width: 300px;
+    height: 500px;
+    background: rgba(227,238,171, 0.5);
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px black;
+    transform: translateY(100px);
+}
+
+.avneet h2{
+    text-align: center;
+    color: #243010;
+}
+
+.yashvi{
+    width: 300px;
+    height: 500px;
+    background: rgba(227,238,171, 0.5);;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px black;
+    transform: translateY(100px);
+}
+
+.yashvi h2{
+    text-align: center;
+    color: #243010;
+}
+
+.olivia{
+    width: 300px;
+    height: 500px;
+    background: rgba(227,238,171, 0.5);;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px black;
+    transform: translateY(100px);
+}
+
+.olivia h2{
+    text-align: center;
+    color: #243010;
+}
 
 /* Tutorial Page */
 body.tutorial{
@@ -349,6 +405,45 @@ header.tutorial{
     z-index: 99;
 }
 
+.boxes{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 50px 0;
+    padding: 20px;
+    gap: 20px; 
+}
+
+.tutorial1{
+    width: 700px;
+    height: 400px;
+    background: rgba(227,238,171, 0.5);;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px black;
+    transform: translateY(100px);
+}
+
+.tutorial1 h2{
+    text-align: center;
+    color: #243010;
+}
+
+.tutorial2{
+    width: 700px;
+    height: 400px;
+    background: rgba(227,238,171, 0.5);;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px black;
+    transform: translateY(100px);
+}
+
+.tutorial2 h2{
+    text-align: center;
+    color: #243010;
+}
 /* task/calender page */
 
 header.tasks{
