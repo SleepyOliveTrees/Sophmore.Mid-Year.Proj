@@ -261,6 +261,68 @@ header.index{
 .login-register a:hover{
     text-decoration: underline;
 }
+/* Home Page */
+body.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://wallpapercave.com/wp/wp7528738.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+header.home{
+    position: fixed;
+    background: #C9E791;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo{
+    font-size: 2em;
+    color: rgb(51, 64, 37);
+    user-select: none;
+    cursor: pointer;
+}
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar a{
+    position: relative;
+    font-size: 1.1em;
+    color: rgb(51, 64, 37);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: rgb(51, 64, 37);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navbar a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
 /* About Page */
 header.about{
     position: fixed;
@@ -289,6 +351,7 @@ body.about{
     position: relative;
     width: 700px;
     height: 500px;   
+    margin-top: 70px;
     background: transparent;
     border: 2px solid rgba(225,225,225, .5);
     border-radius: 20px;
@@ -338,8 +401,9 @@ body.about{
 
 .avneet{
     width: 300px;
-    height: 500px;
-    background: rgba(227,238,171, 0.5);
+    height: 400px;
+    margin-bottom: 50px;
+    background: rgba(68, 74, 38, 0.5);
     border: 2px solid white;
     border-radius: 10px;
     box-shadow: 0 5px 15px black;
@@ -348,13 +412,26 @@ body.about{
 
 .avneet h2{
     text-align: center;
-    color: #243010;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.avneet p{
+    position: absolute;
+    color: rgb(225, 237, 166);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    text-align: center;
+    font-size: 0.9em; 
 }
 
 .yashvi{
     width: 300px;
-    height: 500px;
-    background: rgba(227,238,171, 0.5);;
+    height: 400px;
+    margin-bottom: 50px;
+    background: rgba(68, 74, 38, 0.5);
     border: 2px solid white;
     border-radius: 10px;
     box-shadow: 0 5px 15px black;
@@ -363,13 +440,26 @@ body.about{
 
 .yashvi h2{
     text-align: center;
-    color: #243010;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.yashvi p{
+    position: absolute;
+    color: rgb(225, 237, 166);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    text-align: center;
+    font-size: 0.9em; 
 }
 
 .olivia{
     width: 300px;
-    height: 500px;
-    background: rgba(227,238,171, 0.5);;
+    height: 400px;
+    margin-bottom: 50px;
+    background: rgba(68, 74, 38, 0.5);
     border: 2px solid white;
     border-radius: 10px;
     box-shadow: 0 5px 15px black;
@@ -378,7 +468,19 @@ body.about{
 
 .olivia h2{
     text-align: center;
-    color: #243010;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.olivia p{
+    position: absolute;
+    color: rgb(225, 237, 166);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    text-align: center;
+    font-size: 0.9em; 
 }
 
 /* Tutorial Page */
@@ -422,7 +524,7 @@ header.tutorial{
     border: 2px solid white;
     border-radius: 10px;
     box-shadow: 0 5px 15px black;
-    transform: translateY(100px);
+    transform: translateY(50px);
 }
 
 .tutorial1 h2{
@@ -437,7 +539,7 @@ header.tutorial{
     border: 2px solid white;
     border-radius: 10px;
     box-shadow: 0 5px 15px black;
-    transform: translateY(100px);
+    transform: translateY(50px);
 }
 
 .tutorial2 h2{

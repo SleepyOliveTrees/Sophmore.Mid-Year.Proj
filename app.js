@@ -1,4 +1,4 @@
-//home page
+//login page
 const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
@@ -14,6 +14,7 @@ loginLink.addEventListener('click', ()=> {
 });
 
 btnPopup.addEventListener('click', ()=> {
+    wrapper.classList.remove('active');
     wrapper.classList.add('active-popup');
 });
 
@@ -21,6 +22,29 @@ iconClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
 })
 
+//redirecting to home page
+const login = document.querySelector('.from-box.login form');
+const signup = document.querySelector('.form-box.register form');
+
+login.addEventListener('submit', (event)=> {
+    event.preventDefault();
+    const isValidLogin = true;
+    if(isValidLogin){
+      window.location.href = 'home.html';
+    } else{
+      alert('Invalid login credentials. Please try again');
+    }
+})
+
+signup.addEventListener('submit', (event)=>{
+  event.preventDefault();
+  const isValidRegistration = true;
+  if(isValidRegistration){
+    window.location.href = 'home.html';
+  } else{
+    alert('Registration failed. Please try again.');
+  }
+})
 // task list
 const express = require("express");
 const db = require("./db/db_connection");
