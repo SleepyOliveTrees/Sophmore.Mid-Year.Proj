@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasks</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 <body>
     <header class="tasks">
@@ -16,6 +17,10 @@
         </nav>
       </header>
     <div class = "tasks-bg">
+        <!-- <div class="add-overlay" onclick="hideAddOverlay()">
+        
+        </div> -->
+        <script src="taskapp.js"></script>
         <div class="heading-text">
             <h1>Weekly Tasks</h1>
         </div>
@@ -23,84 +28,100 @@
             <input type="text" id="input-box" placeholder="Type your task here">
             <button onclick="addTask()">Add</button>
         </div>
-        <div class="weekly-display">
+        <div class="row">
+            <input type="text" id="task-desc" placeholder="Type your task here">
+            <select name="priority" id="priority">
+                <option value="3">-</option>
+                <option value="2">!</option>
+                <option value="1">!!</option>
+            </select>
+            <form autocomplete="off" action="/action_page.php">
+                <div class="subject">
+                  <input id="myInput" type="text" name="myCountry" placeholder="Select your subject">
+                </div>
+              </form>
+            <button onclick="addTask()">Add</button>
+        </div>
+        <div class="weekly-display" onclick="showAddOverlay()">
             <div class="todo-app">
                 <div class="day-of-week">
-                    <h2>SUNDAY</h2>
+                    <h2>SUN</h2>
                 </div>
                 <ul id="list-container">
                 </ul>
             </div>
             <div class="todo-app">
+                <div class="date-display">
+                    <h2>11/23</h2>
+                </div>
                 <div class="day-of-week">
-                    <h2>MONDAY</h2>
+                    <h2>MON</h2>
                 </div>
                 
-                <!-- <div class="row">
-                    <input type="text" id="input-box" placeholder="Type yor task here">
-                    <button onclick="addTask()">Add</button>
-                </div> -->
+                <ul id="list-container">
+                    <li><p>ajdhadoiijj</p></li>
+                    <li>fdwcve</li>
+                    <li>test #3</li>
+                </ul>
+            </div>
+            <div class="todo-app">
+                <div class="day-of-week">
+                    <h2>TUE</h2>
+                </div>
+                
                 <ul id="list-container">
                 </ul>
             </div>
             <div class="todo-app">
                 <div class="day-of-week">
-                    <h2>TUESDAY</h2>
+                    <h2>WED</h2>
                 </div>
-                <!-- <div class="row">
-                    <input type="text" id="input-box" placeholder="Type yor task here">
-                    <button onclick="addTask()">Add</button>
-                </div> -->
+
                 <ul id="list-container">
                 </ul>
             </div>
             <div class="todo-app">
                 <div class="day-of-week">
-                    <h2>WEDNESDAY</h2>
+                    <h2>THU</h2>
                 </div>
-                <!-- <div class="row">
-                    <input type="text" id="input-box" placeholder="Type yor task here">
-                    <button onclick="addTask()">Add</button>
-                </div> -->
+
                 <ul id="list-container">
                 </ul>
             </div>
             <div class="todo-app">
                 <div class="day-of-week">
-                    <h2>THURSDAY</h2>
+                    <h2>FRI</h2>
                 </div>
-                <!-- <div class="row">
-                    <input type="text" id="input-box" placeholder="Type yor task here">
-                    <button onclick="addTask()">Add</button>
-                </div> -->
                 <ul id="list-container">
                 </ul>
             </div>
             <div class="todo-app">
                 <div class="day-of-week">
-                    <h2>FRIDAY</h2>
+                    <h2>SAT</h2>
                 </div>
-                <!-- <div class="row">
-                    <input type="text" id="input-box" placeholder="Type yor task here">
-                    <button onclick="addTask()">Add</button>
-                </div> -->
-                <ul id="list-container">
-                </ul>
-            </div>
-            <div class="todo-app">
-                <div class="day-of-week">
-                    <h2>SATURDAY</h2>
-                </div>
-                <!-- <div class="row">
-                    <input type="text" id="input-box" placeholder="Type yor task here">
-                    <button onclick="addTask()">Add</button>
-                </div> -->
                 <ul id="list-container">
                 </ul>
             </div>
         </div>
         
     </div>
-    <script src="app.js"></script>
+    <div class="calendar">
+        <div class="header">
+        <div id="prev" class="btn"><i class="fa-solid fa-arrow-left"></i></div>
+        <div id="month-year"></div>
+        <div id="next" class="btn"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+        <div class="weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+        </div>
+        <div class="days" id="days"></div>
+        </div>
+    <script src="calapp.js"></script>
 </body>
 </html>

@@ -170,3 +170,12 @@ function showTask(){
     db.execute(show_item);
 }
 showTask();
+
+// // task adding section
+// function hideAddOverlay () {
+//   document.getElementById("add-overlay").style.display = "none";
+// }
+
+// function showAddOverlay () {
+//   document.getElementById("add-overlay").style.display = "block";
+// }
