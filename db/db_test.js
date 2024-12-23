@@ -5,7 +5,7 @@ db.execute("SELECT * FROM user", (error, results) => {
   if (error) {
     throw error;
   } else {
-    console.log(results);
+    console.log("Query results:", results);
   }
 });
 
