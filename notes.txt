@@ -1,1 +1,8 @@
 Olivia- Guys, I think we need to change the html files to ejs files and I need to edit those
+
+npx nodemon app.js
+[nodemon] 3.1.9
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node app.js`
