@@ -13,6 +13,12 @@ const get_all_subjects = `
     SELECT subject_name, subject_desc
     FROM subject 
 `;
+
+app.get("/", (req, res) => {
+ 
+    res.render("index", { msesage: username, subjectlist: results });
+});
+
 app.get("/subjects", (req, res) => {
   db.execute(get_all_subjects, (error, results) => {
     if (error) {
