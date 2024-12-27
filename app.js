@@ -50,6 +50,13 @@ const express = require("express");
 const db = require("./db/db_connection");
 const app = express();
 
+app.use(express.static(__dirname + "/public"));
+
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
+
+app.use(express.urlencoded({ extended: false }));
+
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 const create_item = `
