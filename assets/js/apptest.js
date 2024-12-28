@@ -1,5 +1,5 @@
 const express = require("express");
-const db = require("./db/db_connection");
+const db = require("../../db/db_connection");
 const app = express();
 const user = `Select user.user_id From user where user.user_name = ? and user.password = ?`
 app.use(express.static(__dirname + "/public"));

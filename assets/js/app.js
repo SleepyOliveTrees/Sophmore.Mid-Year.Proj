@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // task list
 const express = require("express");
-const db = require("./db/db_connection");
+const db = require("../../db/db_connection");
 const app = express();
 
 app.use(express.static(__dirname + "/public"));
