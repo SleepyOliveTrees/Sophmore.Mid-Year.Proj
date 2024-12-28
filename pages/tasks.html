@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+
+  <link rel="stylesheet" href="../../assets/css/task_styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+</head>
+
+<body>
+  <!-- navbar section -->
+  <header class="tasks">
+    <h2 class="logo"><a href="../index.html">TaskFlower</a></h2>
+    <nav class="navbar">
+      <a href="../about.html">About</a>
+      <a href="../tutorial.html">Tutorial</a>
+      <button class="btnLogin-popup">Login</button>
+    </nav>
+  </header>
+
+  <!-- taskapp section -->
+
+  <div class="tasks-bg" id="tasks-bg">
+
+    <div class="heading">
+      <div id="prevWeek" class="calBtn"><i class="fa-solid fa-arrow-left"></i></div>
+      <h1>Weekly Tasks</h1>
+      <div id="nextWeek" class="calBtn"><i class="fa-solid fa-arrow-right"></i></div>
+    </div>
+
+    <div class="weekly-display" id="weeklyDisplay">
+
+      <!-- dynamically generated in tasksapp.js -->
+
+    </div>
+
+    <!-- add task overlay -->
+    <div class="task-overlay" id="addOverlay" style="display: none;">
+      <div class="overlay-box">
+        <h1>Add Task</h1>
+        <h2 class="overlay-date">
+          <!-- will be filled out in js file -->
+        </h2>
+        <h2>Description: </h2>
+        <input type="text" id="addDescription" placeholder="Type your task here">
+        <h2>Category: </h2>
+        <input type="text" id="addCategory" placeholder="Type the category here">
+        <h2>Priority: </h2>
+        <select name="priority" id="addPriority">
+          <option value="3">Default</option>
+          <option value="2">Medium</option>
+          <option value="1">High</option>
+        </select>
+        <p></p>
+        <button class="submit-task-btn" id="addTaskBtn">ADD</button>
+        <button class="cancel-task-btn" id="addCancelBtn">no...</button>
+      </div>
+    </div>
+
+    <!-- modify task overlay -->
+    <div class="task-overlay" id="modifyOverlay"style="display: none;">
+      <div class="overlay-box">
+        <h1>Modify Task</h1>
+        <h2 class="overlay-date">
+          <!-- will be filled out in js file -->
+        </h2>
+        <h2>Description: </h2>
+        <input type="text" id="modifyDescription" placeholder="Type your task here">
+        <h2>Category: </h2>
+        <input type="text" id="modifyCategory" placeholder="Type the category here">
+        <h2>Priority: </h2>
+        <select name="priority" id="modifyPriority">
+          <option value="3">Default</option>
+          <option value="2">Medium</option>
+          <option value="1">High</option>
+        </select>
+        <p></p>
+        <button class="submit-task-btn" id="modifyTaskBtn">SAVE</button>
+        <button class="cancel-task-btn" id="modifyCancelBtn">no...</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../assets/js/tasksapp.js"></script>
+
+</body>
+
+</html>

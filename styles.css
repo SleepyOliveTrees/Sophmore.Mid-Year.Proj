@@ -754,53 +754,6 @@ ul li span:hover {
       color: #0008ff;  
     }
 
-    /* #month-year {
-    font-weight: bold;
-    font-size: 20px;
-    }
-    .weekdays, .days {
-    display: flex;
-    flex-wrap: wrap;
-    }
-    .days {
-    height: 210px;
-    }
-    .weekdays div, .days div {
-    width: 14.28%;
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 5px;
-    }
-    .days div {
-    cursor: pointer;
-    transition: background-color 0.3s;
-    }
-    .days div:hover {
-    background-color: white;
-    color: orangered;
-    }
-    .days .today {
-    background-color: orangered;
-    color: white;
-    }
-    .days .fade {
-    color: #555;
-    } */
-
-    /* .add-overlay {
-        position: fixed;
-        display: block;
-        width: 100%; 
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.5);
-        z-index: 200;
-        cursor: pointer;
-    } */
-
     .date-display {
         color: #325327;
         font-weight: bold;
@@ -936,4 +889,8 @@ ul li span:hover {
 
 .add-task-btn:hover {
     background: linear-gradient(135deg, #222e0e, hsl(91, 48%, 22%) );
+}
+
+.dds-display {    
+    text-align: center;
 }

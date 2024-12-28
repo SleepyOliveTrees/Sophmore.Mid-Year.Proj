@@ -1,0 +1,500 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Popins', sans-serif;
+}
+
+body.index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://wallpapercave.com/wp/wp7528738.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+header.index {
+    position: fixed;
+    background: #C9E791;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color: rgb(51, 64, 37);
+    user-select: none;
+    cursor: pointer;
+}
+
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 1.1em;
+    color: rgb(51, 64, 37);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: rgb(51, 64, 37);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navbar a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navbar .btnLogin-popup {
+    display: inline-flex;
+    justify-content: center;
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgb(51, 64, 37);
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: rgb(51, 64, 37);
+    font-weight: 500;
+    margin-left: 40px;
+    transition: ease all 0.5s;
+}
+
+.navbar .btnLogin-popup:hover {
+    background-color: rgb(125, 147, 101);
+    color: black;
+}
+
+header.tasks {
+    position: fixed;
+    background: #91AF44;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.tasks-bg {
+    margin-top: 90px;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #243010, #87A330);
+    padding: 50px;
+}
+
+
+.heading {
+    justify-content: space-between;
+    align-items: center;
+
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 0 0 3px #0008ff, 0 0 5px #000000;
+    text-align: center;
+    transition: ease all 0.5s;
+}
+
+.calBtn {
+
+    /* border-radius: 100px; */
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* background-color: #325327; */
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+
+.weekly-display {
+    min-height: 700px;
+}
+.task-column {
+    text-align: center;
+    flex: 1;
+    width: 100%;
+    min-height: 700px;
+    background: #CAD593;
+    margin: 10px 5px 20px;
+    padding: 40px 10px 70px;
+    border-radius: 15px;
+}
+
+.task-column img {
+    width: 30px;
+    margin-left: 10px;
+
+}
+
+.today {
+    .date-display {
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .day-of-week {
+        background-color: #68adbe;
+        box-shadow: 2px 2px 10px #325327;
+    }
+
+}
+
+
+
+input {
+    /* flex: 1; */
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #A1C349;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.day-of-week {
+    text-align: center;
+    background-color: #A1C349;
+    padding: 5px;
+    border-radius: 50px;
+    color: #2A3C24;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: ease all 0.3s;
+}
+
+.day-of-week:hover {
+    background-color: #91af44;
+}
+
+#list-container li {
+    display: flex;
+    grid-template-columns: auto auto;
+    text-align: left;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #889463;
+}
+
+.task-buttons {
+    font-size: 10px;
+    margin: 3px;
+    background-color: #313f19;
+    padding: 5px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 25px 12px 12px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li ::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    /* this part needs to altered still, or maybe remove */
+    background-image: url('https://static-00.iconduck.com/assets.00/radio-button-unchecked-icon-512x512-ikx9yel3.png  x');
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url('https://static-00.iconduck.com/assets.00/checkbox-icon-256x256-lu3j3asn.png');
+
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+ul li span:hover {
+    background: #edeef0;
+}
+
+.weekly-display {
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-rows: auto;
+    align-items: center;
+}
+
+.calendar {
+    flex-direction: row;
+    background-color: #111111;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #222222;
+    overflow: hidden;
+    width: 90vw;
+    color: white;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.day {
+
+    color: #0008ff;
+}
+
+.date-display {
+    color: #325327;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#spinner {
+    z-index: 999;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 205;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #91AF44;
+    border-radius: 50%;
+    border-top: 16px solid #325327;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    color: #C0DC88;
+    text-align: center;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#loader-screen {
+    position: fixed;
+    /* Sit on top of the page content */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.noDisplay {
+    display: none;
+}
+
+.showDisplay {
+    display: block;
+}
+
+.task-overlay {
+    display: flex;
+    /* display: none; */
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 150;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-box {
+    top: 50%;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #99a686, hsl(66, 58%, 91%));
+    background-color: #edf1d9;
+    height: 650px;
+    width: 450px;
+}
+
+.overlay-box h1 {
+    color: #fff;
+    text-shadow: 0 0 3px #325327, 0 0 5px #000000;
+    padding: 15px;
+    background-color: #95ab54;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.overlay-box h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    color: #2A3C24;
+}
+
+.overlay-box input {
+    height: 40px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 0 1px #bdcd28, 0 0 2px #325327;
+    background-color: #dee0d3;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.overlay-box select {
+    height: 40px;
+    text-align: center;
+    color: #325327;
+    font-weight: bold;
+    box-shadow: 0 0 1px #bdcd28, 0 0 2px #325327;
+    border: none;
+    border-radius: 20px;
+    width: 100px;
+    background-color: #E3EEAB;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.submit-task-btn {
+    font-size: 1.7rem;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 175px;
+    height: 60px;
+    margin-top: 20px;
+    margin-left: 137px;
+    background: linear-gradient(135deg, #313f19, hsl(90, 38%, 34%));
+}
+
+.submit-task-btn:hover {
+    background: linear-gradient(135deg, #222e0e, hsl(91, 48%, 22%));
+}
+
+.overlay-date {
+    text-align: center;
+}
+
+.cancel-task-btn {
+    font-size: 1.7rem;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 175px;
+    height: 60px;
+    margin-top: 20px;
+    margin-left: 137px;
+    background: linear-gradient(135deg, #313f19, hsl(90, 38%, 34%));
+}
+
+.cancel-task-btn:hover {
+    background: linear-gradient(135deg, #222e0e, hsl(91, 48%, 22%));
+}
+
+.overlay-date {
+    text-align: center;
+}
+
+.newTaskBtn {
+    color: #fff;
+    font-size: 2rem;
+    min-width: 100px;
+    background-color: #325327;
+    padding: 2px;
+    transition: ease all 0.3s;
+
+}
+.newTaskBtn:hover {
+    color: #a7a7a7;
+    background-color: #313f19;
+
+}
