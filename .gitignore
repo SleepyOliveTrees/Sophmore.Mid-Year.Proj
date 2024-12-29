@@ -9,6 +9,10 @@ node_modules/
 # Environment variables
 .env
 
+# for the backend folder
+backend/.env
+
 # Editor-specific files
 .vscode/
 .idea/
+

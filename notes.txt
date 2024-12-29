@@ -6,3 +6,26 @@ npx nodemon app.js
 [nodemon] watching path(s): *.*
 [nodemon] watching extensions: js,mjs,cjs,json
 [nodemon] starting `node app.js`
+
+
+
+yashvi 12/28/2024 --
+
+for first time setup: go to backend directory (cd backend)
+npn init -y
+npm install express cors mysql2 dotenv
+npm install --save-dev nodemon
+
+created a new table in the sql database for tasks
+query:
+create table task (
+id int auto_increment primary key,
+category varchar(255) not null,
+descr text not null,
+is_completed boolean not null default false,
+due_date date not null
+);
+
+first insert query:
+insert into task (category, descr, due_date)
+values ("math","worksheet","2024-12-28");

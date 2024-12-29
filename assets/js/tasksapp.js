@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tasksapp = {
 
-
+        apiBaseUrl: "http://127.0.0.1:5000",
         currentWeekOffset: 0,
         tasks: {},
         modifyingTask: null,
@@ -43,13 +43,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
         },
 
-        // rendering the selected week
+        // fetch tasks
+        async fetchTasks (startDate, endDate) {
+            try {
+                const response = await fetch(`${this.apiBaseUrl}/api/tasks?start=${startDate}&end=${endDate}`);
+                if (!response.ok) {
+                    throw new Error("Failed to fetch tasks :(");
+                }
+                const data = await response.json();
+                console.log(data);
 
-        renderWeek() {
+                // update state with tasks
+                this.tasks = data.reduce((acc, task) => {
+                    acc[task.due_date] = acc[task.due_date] || [];
+                    acc[task.due_date].push(task);
+                    return acc;
+                }, {});
+            }
+            catch (error) {
+                console.error("Error fetching tasks :(( : ", error);
+            }
+        },
+
+        // rendering the selected week
+        async renderWeek() {
 
             const today = new Date();
             const startOfWeek = this.getStartOfWeek(today, this.currentWeekOffset);
+            const endOfWeek = new Date(startOfWeek);
+            endOfWeek.setDate(startOfWeek.getDate()+6);
             this.weeklyDisplay.innerHTML = "";
+
+            // fetch tasks for the week
+            const startDate = this.getDateString(startOfWeek);
+            const endDate = this.getDateString(endOfWeek);
+            await this.fetchTasks(startDate, endDate);
 
             for (let i = 0; i < 7; i++) {
                 const date = new Date(startOfWeek);
@@ -98,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     deleteButton.textContent = "❌";
                     deleteButton.addEventListener("click", () => this.removeTask(dateString, task.id));
                 
-                    taskItem.textContent = `${task.category}, ${task.description}`;
+                    taskItem.textContent = `${task.category}, ${task.descr}`;
                     taskItem.appendChild(modifyButton);
                     taskItem.appendChild(deleteButton);
                     taskList.appendChild(taskItem);
@@ -155,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
         showModifyOverlay(date, taskId) {
             this.modifyingDate = date;
             this.modifyingTask = this.tasks[date].find((task) => task.id === taskId);
-            this.modifyDescription.value = this.modifyingTask.description;
+            this.modifyDescription.value = this.modifyingTask.descr;
             this.modifyCategory.value = this.modifyingTask.category;
             this.modifyOverlay.style.display = "flex";
 
@@ -168,15 +196,18 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         modifyTask() {
-            this.modifyingTask.description = this.modifyDescription.value;
+            this.modifyingTask.descr = this.modifyDescription.value;
             this.modifyingTask.category = this.modifyCategory.value;
             this.hideModifyOverlay();
             this.renderWeek();
         },
 
-        // gets a date in the dateString format (mm/dd/yyyy)
+        // gets a date in the dateString format (yyyy-mm-dd)
         getDateString(date) {
-            return date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear();
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, "0");
+            const day = String(date.getDate()).padStart(2, "0");
+            return `${year}-${month}-${day}`;
         },
 
         // sees if the selected date is today
