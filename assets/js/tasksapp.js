@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         // fetch tasks
-        async fetchTasks (startDate, endDate) {
+        async fetchTasks(startDate, endDate) {
             try {
                 const response = await fetch(`${this.apiBaseUrl}/api/tasks?start=${startDate}&end=${endDate}`);
                 if (!response.ok) {
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const today = new Date();
             const startOfWeek = this.getStartOfWeek(today, this.currentWeekOffset);
             const endOfWeek = new Date(startOfWeek);
-            endOfWeek.setDate(startOfWeek.getDate()+6);
+            endOfWeek.setDate(startOfWeek.getDate() + 6);
             this.weeklyDisplay.innerHTML = "";
 
             // fetch tasks for the week
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     deleteButton.className = "task-buttons";
                     deleteButton.textContent = "❌";
                     deleteButton.addEventListener("click", () => this.removeTask(dateString, task.id));
-                
+
                     taskItem.textContent = `${task.category}, ${task.descr}`;
                     taskItem.appendChild(modifyButton);
                     taskItem.appendChild(deleteButton);
@@ -154,17 +154,30 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         // make sure to add priority later
-        addTask() {
+        async addTask() {
             if (!this.addDescription.value.trim() || !this.addCategory.value.trim()) {
                 return;
             }
-            if (!this.tasks[this.newTaskDate]) {
-                this.tasks[this.newTaskDate] = [];
-            }
-            this.tasks[this.newTaskDate].push({ id: Date.now(), date: this.newTaskDate, description: this.addDescription.value.trim(), category: this.addCategory.value.trim() });
 
-            this.hideAddOverlay();
-            this.renderWeek();
+            try {
+                const response = await fetch(`${this.apiBaseUrl}/api/tasks`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        due_date: this.newTaskDate,
+                        descr: this.addDescription.value.trim(),
+                        category: this.addCategory.value.trim(),
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to add task :(");
+                }
+                this.hideAddOverlay();
+                this.renderWeek();
+            } catch (error) {
+                console.error("Error adding task: ", error);
+            }
         },
 
         hideAddOverlay() {
@@ -174,9 +187,15 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         // removes a task
-        removeTask(date, taskId) {
-            this.tasks[date] = this.tasks[date].filter((task) => task.id !== taskId);
-            this.renderWeek();
+        async removeTask(date, taskId) {
+            try {
+                const response = await fetch(`${this.apiBaseUrl}/api/tasks/${taskId}`, {
+                    method: "DELETE"
+                });
+                this.renderWeek();
+            } catch (error) {
+                console.error("Error deleting task:", error);
+            }
         },
 
         // shows the modifying overlay
@@ -195,11 +214,33 @@ document.addEventListener("DOMContentLoaded", () => {
             this.modifyingDate = null;
         },
 
-        modifyTask() {
-            this.modifyingTask.descr = this.modifyDescription.value;
-            this.modifyingTask.category = this.modifyCategory.value;
-            this.hideModifyOverlay();
-            this.renderWeek();
+        async modifyTask() {
+
+            if (!this.modifyDescription.value.trim() || !this.modifyCategory.value.trim()) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`${this.apiBaseUrl}/api/tasks/${this.modifyingTask.id}`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        due_date: this.modifyingTask.due_date,
+                        descr: this.modifyDescription.value.trim(),
+                        category: this.modifyCategory.value.trim(),
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to modify task :(");
+                }
+                this.hideModifyOverlay();
+                this.renderWeek();
+            } catch (error) {
+                console.error("Error modifying task: ", error);
+            }
+
+
         },
 
         // gets a date in the dateString format (yyyy-mm-dd)

@@ -29,3 +29,25 @@ due_date date not null
 first insert query:
 insert into task (category, descr, due_date)
 values ("math","worksheet","2024-12-28");
+
+yashvi 12/30/2024
+CREATE TASK CURL COMMAND:
+curl -X POST http://localhost:5000/api/tasks \
+-H "Content-Type: application/json" \
+-d '{
+    "category":"Math",
+    "descr":"Packet",
+    "due_date":"2024-12-30"
+}'
+
+UPDATE TASK CURL COMMAND:
+curl -X PUT http://localhost:5000/api/tasks/6 \
+-H "Content-Type: application/json" \
+-d '{
+    "category":"geometry",
+    "descr":"packet",
+    "due_date":"2024-12-30"
+}'
+
+DELETE TASK CURL COMMAND:
+curl -X DELETE http://localhost:5000/api/tasks/6
