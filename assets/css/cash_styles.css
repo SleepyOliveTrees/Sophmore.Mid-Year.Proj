@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Popins', sans-serif;
+}
+header.cash {
+    position: fixed;
+    background: #C9E791;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo{
+    font-size: 2em;
+    color: rgb(51, 64, 37);
+    user-select: none;
+    cursor: pointer;
+}
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar a{
+    position: relative;
+    font-size: 1.1em;
+    color: rgb(51, 64, 37);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: rgb(51, 64, 37);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navbar a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navbar .btnLogin-popup{
+    display: inline-flex;
+    justify-content: center;
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgb(51, 64, 37); 
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: rgb(51, 64, 37);
+    font-weight: 500;
+    margin-left: 40px;
+    transition: ease all 0.5s;
+}
+
+.navbar .btnLogin-popup:hover{
+    background-color: rgb(125, 147, 101);
+    color: black;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+h2{
+    text-align: center;
+}
+.input-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.input-section label{
+    font-weight: bold;
+    margin-right: 10px;
+}
+.input-section input[type="text"], [type="number"], .input-section input[type="date"]{
+    padding: 5px;
+    margin-right: 10px;
+}
+.input-section button{
+    padding: 5px 10px;
+    background-color: #374a14;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.expenses-list{
+    margin: 20px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th,td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th{
+    background-color: #C9E791;
+    color: black;
+}
+tfoot td{
+    font-weight: bold;
+}
+.delete-btn{
+    padding: 5px;
+    background-color: rgb(238, 9, 9);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
