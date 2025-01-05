@@ -17,21 +17,8 @@
     </nav>
   </header>
 <!-- Expense Tracker -->
-    <div class="input-section">
-        <label for="category-select">Category:</label>
-        <input type="text" id="category-select" placeholder="Type here...">
-
-        <label for="amount-input">Amount:</label>
-        <input type="number"id="amount-input">
-
-        <label for="date-input">Date:</label>
-        <input type="date" id="date-input">
-
-        <button id="add-btn">Add</button>
-    </div>
-
     <div class="expenses-list">
-        <h2>Expenses List</h2>
+        <h1>Expenses List</h1>
         <table>
             <thead>
                 <tr>
@@ -41,9 +28,7 @@
                     <th>Delete</th>
                 </tr>
             </thead>
-            <tbody id="expense-table-body">
-                
-            </tbody>
+            <tbody id="expense-table-body"></tbody>
             <tfoot>
                 <td>Total:</td>
                 <td id="total-amount"></td>
@@ -52,6 +37,21 @@
             </tfoot>
         </table>
     </div>
+
+    <div class="input-section">
+        <label for="category-select">Category:</label>
+        <input type="text" id="category-select" placeholder="Type here...">
+
+        <label for="amount-input">Amount:</label>
+        <input type="number"id="amount-input" placeholder="Type here...">
+
+        <label for="date-input">Date:</label>
+        <input type="date" id="date-input">
+
+        <button id="add-btn">Add</button>
+    </div>
+
+    
     <script src="../assets/js/cashapp.js"></script>
 </body>
 </html>
