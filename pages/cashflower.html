@@ -1,57 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/cash_styles.css">
-    <title>CashFlower</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CashFlower</title>
+  <link rel="stylesheet" href="../../assets/css/cash_styles.css">
 </head>
 <body>
-<!-- navbar section -->
+
   <header class="cash">
-    <h2 class="logo"><a href="../index.html">TaskFlower</a></h2>
+    <h2 class="logo"><a href="../index.html">GardenLog</a></h2>
     <nav class="navbar">
       <a href="about.html">About</a>
       <a href="tutorial.html">Tutorial</a>
-      <a href="tasks.html">Tasks</a>
+      <a href="tasks.html">TaskFlower</a>
     </nav>
   </header>
-<!-- Expense Tracker -->
-    <div class="expenses-list">
-        <h1>Expenses List</h1>
+  <main>
+    <div class="total-container">
+      <h2>Total Amount: $<span id="total-amount">0.00</span></h2>
+    </div>
+    <div class="table-container">
         <table>
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Amount</th>
-                    <th>Date</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody id="expense-table-body"></tbody>
-            <tfoot>
-                <td>Total:</td>
-                <td id="total-amount"></td>
-                <td></td>
-                <td></td>
-            </tfoot>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="expense-table-body"></tbody>
         </table>
+      </div>
+    <div class="form-container">
+      <input type="text" id="description" placeholder="Description...">
+      <input type="number" id="amount" placeholder="(+/-) Amount" step="0.01">
+      <input type="date" id="date">
+      <button id="add-button">Add</button>
+      <button id="clear-button">Clear All</button>
     </div>
-
-    <div class="input-section">
-        <label for="category-select">Category:</label>
-        <input type="text" id="category-select" placeholder="Type here...">
-
-        <label for="amount-input">Amount:</label>
-        <input type="number"id="amount-input" placeholder="Type here...">
-
-        <label for="date-input">Date:</label>
-        <input type="date" id="date-input">
-
-        <button id="add-btn">Add</button>
-    </div>
-
-    
-    <script src="../assets/js/cashapp.js"></script>
+  </main>
+  <script src="../assets/js/cashapp.js"></script>
 </body>
 </html>
