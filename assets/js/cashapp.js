@@ -1,6 +1,6 @@
-// script.js
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Element selectors
+
     const totalAmountEl = document.getElementById("total-amount");
     const descriptionEl = document.getElementById("description");
     const amountEl = document.getElementById("amount");
@@ -9,14 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const clearButton = document.getElementById("clear-button");
     const expenseTableBody = document.getElementById("expense-table-body");
   
-    let totalAmount = 0; // Initialize total amount
+    let totalAmount = 0; 
   
-    // Function to update total amount displayed
+
     const updateTotal = () => {
       totalAmountEl.textContent = totalAmount.toFixed(2);
     };
   
-    // Function to add a new expense
     const addExpense = () => {
       const description = descriptionEl.value.trim();
       const amount = parseFloat(amountEl.value);
@@ -29,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
       totalAmount += amount;
   
-      // Create a new row for the table
+
       const row = document.createElement("tr");
       row.innerHTML = `
         <td>${description}</td>
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <td><button class="delete-button">Delete</button></td>
       `;
   
-      // Add delete functionality to the new row
+    
       const deleteButton = row.querySelector(".delete-button");
       deleteButton.addEventListener("click", () => {
         totalAmount -= amount;
@@ -46,24 +45,23 @@ document.addEventListener("DOMContentLoaded", () => {
         updateTotal();
       });
   
-      expenseTableBody.appendChild(row); // Append the row to the table
+      expenseTableBody.appendChild(row);
   
-      // Clear input fields
+   
       descriptionEl.value = "";
       amountEl.value = "";
       dateEl.value = "";
   
-      updateTotal(); // Update the total amount
+      updateTotal(); 
     };
   
-    // Function to clear all expenses
     const clearAll = () => {
-      expenseTableBody.innerHTML = ""; // Clear table body
-      totalAmount = 0; // Reset total amount
-      updateTotal(); // Update the displayed total
+      if(confirm("Are you sure you want to clear all of your trasactions?"))
+      expenseTableBody.innerHTML = ""; 
+      totalAmount = 0; 
+      updateTotal(); 
     };
   
-    // Event listeners for buttons
     addButton.addEventListener("click", addExpense);
     clearButton.addEventListener("click", clearAll);
   });

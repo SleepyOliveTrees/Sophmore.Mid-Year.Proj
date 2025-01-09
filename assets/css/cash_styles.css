@@ -121,6 +121,7 @@ tbody td {
     padding: 10px;
     text-align: center;
     word-wrap: break-word; 
+    vertical-align: middle;
 } 
 tbody tr:nth-child(even) {
     background-color: #8fa85b;
@@ -139,7 +140,7 @@ input, button {
     border: 1px solid #718936;
     border-radius: 5px;
 }
-input{
+input {
     background-color: #CAD593;
 }  
 input::placeholder{
@@ -159,4 +160,14 @@ button {
 button:hover {
     background-color: #758848; 
     transition: background-color 0.5s ease;
+}
+.delete-button {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    display: inline-block;
+    margin: 0 auto;
+}
+.delete-button:hover {
+    background-color: #e60000;
+    transition: background-color 0.3s ease;
 }
