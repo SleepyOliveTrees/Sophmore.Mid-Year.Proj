@@ -307,14 +307,15 @@ body.about{
     transform: translateX(-50%);
     margin: 0;
     text-align: center;
-    color: #2A3C24;
+    color: white;
     font-size: 2.3rem;
 }
 .about-box p.paragraph{
     position: relative;
     text-align: center;
-    color: white;
+    color: #0c130a;
     font-size: 1.2em;
+    padding: 5%;
 }
 .about-box p.contact-us{
     
@@ -339,7 +340,7 @@ body.about{
 
 .avneet{
     width: 300px;
-    height: 400px;
+    height: 350px;
     margin-bottom: 50px;
     background: rgba(68, 74, 38, 0.5);
     border: 2px solid white;
@@ -357,17 +358,17 @@ body.about{
 .avneet p{
     position: absolute;
     color: rgb(225, 237, 166);
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 20%;
+    left: 25%;
+    transform: translateX(-15%);
     margin: 0;
     text-align: center;
-    font-size: 0.9em; 
+    font-size: 0.95em; 
 }
 
 .yashvi{
     width: 300px;
-    height: 400px;
+    height: 350px;
     margin-bottom: 50px;
     background: rgba(68, 74, 38, 0.5);
     border: 2px solid white;
@@ -385,17 +386,17 @@ body.about{
 .yashvi p{
     position: absolute;
     color: rgb(225, 237, 166);
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 20%;
+    left: 25%;
+    transform: translateX(-15%);
     margin: 0;
     text-align: center;
-    font-size: 0.9em; 
+    font-size: 0.95em; 
 }
 
 .olivia{
     width: 300px;
-    height: 400px;
+    height: 350px;
     margin-bottom: 50px;
     background: rgba(68, 74, 38, 0.5);
     border: 2px solid white;
@@ -413,12 +414,12 @@ body.about{
 .olivia p{
     position: absolute;
     color: rgb(225, 237, 166);
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 20%;
+    left: 25%;
+    transform: translateX(-15%);
     margin: 0;
     text-align: center;
-    font-size: 0.9em; 
+    font-size: 0.95em; 
 }
 
 /* Tutorial Page */
