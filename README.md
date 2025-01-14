@@ -22,7 +22,7 @@
 ## one time installation
  open git bash and run the commands below
 1. `cd backend`
-2. `npn init -y`
+2. `npm init -y`
 3. `npm install express cors mysql2 dotenv`
 4. `npm install --save-dev nodemon`
 
